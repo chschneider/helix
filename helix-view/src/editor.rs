@@ -197,6 +197,9 @@ pub struct FilePickerConfig {
     /// Enables reading `.git/info/exclude` files.
     /// Whether to hide files listed in .git/info/exclude in file picker and global search results. Defaults to true.
     pub git_exclude: bool,
+    /// Enables ignoring untracked files
+    /// Whether to hide files which are not tracked by git from changed file picker
+    pub git_ignore_untracked: bool,
     /// WalkBuilder options
     /// Maximum Depth to recurse directories in file picker and global search. Defaults to `None`.
     pub max_depth: Option<usize>,
@@ -213,6 +216,7 @@ impl Default for FilePickerConfig {
             git_ignore: true,
             git_global: true,
             git_exclude: true,
+            git_ignore_untracked: false,
             max_depth: None,
         }
     }
